@@ -1,0 +1,47 @@
+form {
+	border-top: 4px solid $col-brand;
+	margin-top: 2rem;
+	padding-top: 2rem;
+
+	>label {
+		position: relative;
+		margin-bottom: 1rem;
+	}
+	
+	.actions {
+		text-align: center;
+		padding-top: 2rem;
+	}
+}
+
+button {
+	display: block;
+	margin: 0 auto;
+	min-width: 12rem;
+	border: 4px solid $col-brand;
+	background: white;
+	color: $col-brand;
+	font-size: 20px;
+	padding: 1rem;
+	cursor: pointer;
+	
+	&.small {
+		border: none;
+		text-decoration: underline;
+	}
+}
+
+input {
+	padding: 0.5rem;
+	padding-left: 1rem;
+	width: 100%;
+	box-sizing: border-box;
+	border: none;
+	border-left: 4px solid $col-brand;
+	font-size: 20px;
+	outline: none;
+
+	&:focus {
+		background: $col-brand-light;
+	}
+}

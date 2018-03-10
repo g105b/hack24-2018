@@ -1,0 +1,14 @@
+{
+	"name": "RuminantAblutionists",
+	"minimum-stability": "dev",
+
+	"require": {
+		"phpgt/webengine": "dev-master"
+	},
+
+	"autoload-dev": {
+		"psr-4": {
+			"App\\": "./src/class"
+		}
+	}
+}

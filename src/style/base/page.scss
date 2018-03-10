@@ -1,0 +1,14 @@
+body {
+	font-family: 'Mina', sans-serif;
+	font-size: 24px;
+	margin: 0 auto;
+	padding: 1rem;
+	max-width: $break-med;
+	background: $col-bg;
+	border: 4px solid $col-fg;
+	color: $col-fg;
+}
+
+a {
+	color: $col-brand;
+}
