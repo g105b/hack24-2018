@@ -6,6 +6,7 @@ use App\Data\Storage;
 class Authentication {
 	public static function exists(string $email):bool {
 		$storage = new Storage("auth");
+
 		return $storage->fieldHasValue("email", $email);
 	}
 
@@ -28,5 +29,14 @@ class Authentication {
 
 	public static function hashPassword(string $password):string {
 		return password_hash($password, PASSWORD_BCRYPT);
+	}
+
+	public static function login(string $email, string $password):void {
+		$storage = new Storage("auth");
+		$authData = $storage->getBy("email", $email);
+
+		if(!password_verify($password, $authData["password"])) {
+			throw new InvalidAuthenticationException();
+		}
 	}
 }

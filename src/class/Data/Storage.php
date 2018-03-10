@@ -64,4 +64,14 @@ class Storage {
 		]);
 		fclose($fh);
 	}
+
+	public function getBy(string $key, string $value):?array {
+		foreach($this->data as $row) {
+			if($row[$key] === $value) {
+				return $row;
+			}
+		}
+
+		return null;
+	}
 }
