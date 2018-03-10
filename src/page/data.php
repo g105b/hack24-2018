@@ -35,7 +35,7 @@ class DataPage extends Page {
 
 				if($inFile->getExtension() === "jpg") {
 					$value = implode("/", [
-						$this->serverInfo->getRemoteHost(),
+						"https://hack24-2018.g105b.com",
 						"photo?id=" . $user->id
 					]);
 				}
