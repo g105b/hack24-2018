@@ -1,0 +1,4 @@
+/.idea
+/data/auth.csv
+/vendor
+*.phar
