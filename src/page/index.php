@@ -17,7 +17,7 @@ class IndexPage extends \Gt\WebEngine\Logic\Page {
 				$data["email"],
 				$data["password"]
 			);
-			$this->session("auth", $data["email"]);
+			$this->session->set("auth", $data["email"]);
 			header("Location: /user");
 			exit;
 		}

@@ -31,7 +31,7 @@ button {
 	}
 }
 
-input {
+input,textarea {
 	padding: 0.5rem;
 	padding-left: 1rem;
 	width: 100%;
@@ -44,4 +44,9 @@ input {
 	&:focus {
 		background: $col-brand-light;
 	}
+}
+
+textarea {
+	font-family: inherit;
+	height: 6rem;
 }
