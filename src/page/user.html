@@ -1,13 +1,13 @@
 <header>
-	<img src="/asset/img/profile.png" alt="Profile photo" />
+	<img id="face-photo" src="/asset/img/profile.png" alt="Profile photo" />
 	<h1>Your details</h1>
 </header>
 
 
-<form method="post" class="c-user-details">
+<form method="post" class="c-user-details" enctype="multipart/form-data">
 	<label>
 		<span>Your facial photo</span>
-		<input name="face" type="file" required />
+		<input name="face" type="file" />
 	</label>
 	<label>
 		<span>Your name</span>
@@ -16,6 +16,10 @@
 	<label>
 		<span>Bio</span>
 		<textarea name="bio" placeholder="e.g. I like cats and watermelons"></textarea>
+	</label>
+	<label>
+		<span>Website</span>
+		<input name="website" placeholder="e.g. www.microsoft.com" />
 	</label>
 	<label>
 		<span>Twitter</span>

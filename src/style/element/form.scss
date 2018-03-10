@@ -29,6 +29,11 @@ button {
 		border: none;
 		text-decoration: underline;
 	}
+
+	&:hover:not(:active) {
+		background: $col-brand;
+		color: white;
+	}
 }
 
 input,textarea {
