@@ -19,6 +19,7 @@ class UserPage extends \Gt\WebEngine\Logic\Page {
 
 	public function logout() {
 		$this->session->delete("auth");
+		$this->cookieHandler->delete("WebEngineSession");
 		header("Location: /");
 		exit;
 	}
