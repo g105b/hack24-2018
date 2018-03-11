@@ -2,3 +2,4 @@
 /data/auth.csv
 /vendor
 *.phar
+/.sass-cache
