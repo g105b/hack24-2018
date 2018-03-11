@@ -57,12 +57,14 @@ class DataPage extends Page {
 					$value = null;
 				}
 
+				$value = trim($value);
+
 				if($key === "slack") {
 					$slackTeam = $userTeams->$value->name;
 					$slackMotto = $userTeams->$value->motto;
 				}
 
-				$user->$key = trim($value);
+				$user->$key = $value;
 			}
 
 			$user->slackTeam = $slackTeam;
