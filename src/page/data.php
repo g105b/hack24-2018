@@ -62,7 +62,7 @@ class DataPage extends Page {
 					$slackMotto = $userTeams->$value->motto;
 				}
 
-				$user->$key = $value;
+				$user->$key = trim($value);
 			}
 
 			$user->slackTeam = $slackTeam;
