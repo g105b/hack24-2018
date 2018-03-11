@@ -9,6 +9,13 @@ use stdClass;
 
 class DataPage extends Page {
 	public function go() {
+		$userTeamsJson = file_get_contents(implode(DIRECTORY_SEPARATOR, [
+			Path::getDataDirectory(),
+			"user_teams.json",
+		]));
+
+		$userTeams = json_decode($userTeamsJson);
+
 		$obj = new StdClass();
 		$obj->userList = [];
 
@@ -24,6 +31,9 @@ class DataPage extends Page {
 
 			$user = new StdClass();
 			$user->id = Security::hash($fileName);
+
+			$slackTeam = null;
+			$slackMotto = null;
 
 			foreach(new DirectoryIterator($file->getPathname()) as $inFile) {
 				if(!$inFile->isFile()) {
@@ -47,8 +57,16 @@ class DataPage extends Page {
 					$value = null;
 				}
 
+				if($key === "slack") {
+					$slackTeam = $userTeams->$value->name;
+					$slackMotto = $userTeams->$value->motto;
+				}
+
 				$user->$key = $value;
 			}
+
+			$user->slackTeam = $slackTeam;
+			$user->slackMotto = $slackMotto;
 
 			$obj->userList []= $user;
 		}
